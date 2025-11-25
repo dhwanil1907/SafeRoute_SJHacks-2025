@@ -1,0 +1,233 @@
+/* Page Layout - Prevent page scroll, everything fits on screen */
+.page-layout {
+  display: flex;
+  gap: 20px;
+  background-color: #e6ecf0; /* Soft gray-blue background */
+  height: 100vh; /* Full height of the viewport */
+  margin-top: 60px; /* Adjusted for the fixed navbar */
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent page scrolling */
+}
+
+/* Navbar - Fixed at the top */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #1e3c72;
+  color: white;
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: bold;
+  z-index: 9999;
+  width: 100%;
+  border-bottom: 2px solid #ddd; /* Border instead of shadow */
+  box-sizing: border-box;
+}
+
+/* Sidebar - Fixed position, height adjusted to fit screen */
+.sidebar {
+  width: 320px;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: calc(100vh - 60px); /* Subtract navbar height */
+  overflow-y: auto; /* Allow scrolling only within the sidebar */
+  box-sizing: border-box;
+}
+
+/* Map Container - Fixed position, height adjusted to fit screen */
+.map-container {
+  flex: 1;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: calc(100vh - 60px); /* Subtract navbar height */
+  box-sizing: border-box;
+}
+
+/* Form Section */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  outline: none;
+}
+
+/* Buttons */
+.find-route-button,
+.profile-link,
+.download-button {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.find-route-button {
+  background-color: #00ff88;
+  color: black;
+  border: none;
+}
+
+.find-route-button:hover {
+  background-color: #00cc6a;
+}
+
+.profile-link {
+  background-color: white;
+  color: #2a5298;
+  text-decoration: none;
+}
+
+.profile-link:hover {
+  background-color: #eeeeee;
+}
+
+.download-button {
+  background-color: #ffeb3b;
+  color: black;
+  border: none;
+}
+
+.download-button:hover {
+  background-color: #fdd835;
+}
+
+/* Directions Viewer */
+.directions-viewer {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.directions-scroll {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-bottom: 10px;
+}
+
+.direction-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.direction-icon {
+  font-size: 18px;
+}
+
+.direction-text {
+  font-size: 14px;
+}
+
+/* Stats Dashboard */
+.stats-dashboard {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.stats-dashboard h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.stats-dashboard p {
+  margin-bottom: 10px;
+}
+
+.stats-dashboard ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.stats-dashboard li {
+  margin-bottom: 5px;
+}
+
+/* Suggestions Dropdown */
+.suggestions {
+  position: absolute;
+  top: 75px;
+  left: 0;
+  right: 0;
+  background: white;
+  color: black;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.suggestions li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.suggestions li:hover {
+  background: #eee;
+}
+
+/* Popup */
+.custom-popup {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ff88;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-popup button {
+  margin-top: 10px;
+  padding: 8px 20px;
+  background: #00ff88;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
